@@ -258,6 +258,13 @@ public class frmMain extends javax.swing.JFrame {
         // Decisión de batalla
         // <Inserte su código aquí>
         System.out.println("¡Resultado de la batalla!");
+        if(nivel1==nivel2){
+            JOptionPane.showMessageDialog(null, "Empate");
+        }else if(nivel1>nivel2){
+            JOptionPane.showMessageDialog(null, "Ganador: "+peleador1.getName());  
+        }else if(nivel1<nivel2){
+            JOptionPane.showMessageDialog(null, "Ganador: " + peleador2.getName());    
+        }
     }//GEN-LAST:event_btnBatallaActionPerformed
 
     private void btnGetDigimonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDigimonActionPerformed
