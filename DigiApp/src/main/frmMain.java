@@ -36,6 +36,7 @@ public class frmMain extends javax.swing.JFrame {
      */
     public frmMain() {
         initComponents();
+        this.setLocationRelativeTo(this);
         tblDigimon.setModel(model); // diseña la tabla en base a las columnas definidas
         btnBatalla.setEnabled(false); // no se puede batallar si no hay digimons peleadores
         reloj.start(); // objeto iniciado para la hora del sistema. ¡No modificar!

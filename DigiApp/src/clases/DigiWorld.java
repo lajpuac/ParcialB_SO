@@ -10,6 +10,7 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.logging.Level;
@@ -47,6 +48,12 @@ public final class DigiWorld {
         digimons = mapper.readValue(response.body(), new TypeReference<List<Digimon>>() {});
         // ordenar listado de Digimon
         // <Inserte su código aquí>
+        Collections.sort(digimons, new Comparator<Digimon>() {
+            @Override
+            public int compare(Digimon d1, Digimon d2) {
+                return new String(d1.getName()).compareTo(new String(d2.getName()));
+            }
+        });
         // agregar listado de Digimon a la tabla
         digimons.forEach((digimon) -> {
             tabla.addRow(new Object[]{digimon.getName(), digimon.getLevel()});
