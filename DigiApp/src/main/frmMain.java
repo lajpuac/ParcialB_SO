@@ -63,6 +63,21 @@ public class frmMain extends javax.swing.JFrame {
             lblDigimon1.setText(peleador1.getName());
             // código para elegir al segundo peleador
             // <Inserte su código aquí>
+            int digielecto2 = (int) ((Math.random() * ((yggdrasill.getDigimons().size() - 1) - 0)) + 0);
+            peleador2 = yggdrasill.getDigimons().get(digielecto2);
+            try {
+                URL url = new URL(peleador2.getImg());
+                Image img = ImageIO.read(url);
+                img = img.getScaledInstance(100, 100,  java.awt.Image.SCALE_SMOOTH);
+                lblDigimon2.setIcon(new ImageIcon(img));
+            } catch (MalformedURLException ex) {
+                Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IOException ex) {
+                Logger.getLogger(frmMain.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            // código para elegir al segundo peleador
+            
+            
             System.out.println("¡Peladores listos para la batalla!");
             btnElegir.setEnabled(true);
             btnBatalla.setEnabled(true);
